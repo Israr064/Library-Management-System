@@ -16,7 +16,7 @@ class Library:
     def add_book(self,book):
        self.books.append(book)
 
-    def addd_member(self,member):
+    def add_member(self,member):
         self.members.append(member)
 
     def display_all_books(self):
@@ -45,8 +45,8 @@ L1.add_book(b2)
 L1.add_book(b3)
 L1.display_all_books()
 
-L1.addd_member(m1)
-L1.addd_member(m2)
+L1.add_member(m1)
+L1.add_member(m2)
 L1.display_all_members()
 
 
