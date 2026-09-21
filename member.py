@@ -14,6 +14,3 @@ class Member:
         print(f"Name = {self.name}")
         print(f"Borrowed books = {self.borrowed_books}")
 
-
-m1 = Member(123,"Ibrar")
-m1.display_info()

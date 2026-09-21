@@ -17,5 +17,3 @@ class Book:
         
 
 
-B1 = Book("Python","Israr",1043)
-B1.display_info()
