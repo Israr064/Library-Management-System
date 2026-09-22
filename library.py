@@ -41,5 +41,19 @@ class Library:
             num += 1
             member.display_info()
 
-
+    # Issue book Metod
+    def issue_book(self,isbn,member_id):
+        for book in self.books:
+            if book.isbn == isbn:
+                if book.is_issued:
+                    raise Exception("Book already issued")
+                else: 
+                    book.is_issued = True
+                    for m in self.members:
+                        if m.member_id == member_id:
+                            m.borrowed_books.append(book)
+                            print(f"Book {book.title} is issued to {m.name}.")
+                            return
+                    raise Exception("Member not found")
+        raise Exception("Book not found.")
 
