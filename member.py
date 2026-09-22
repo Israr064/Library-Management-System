@@ -10,7 +10,5 @@ class Member:
         self.borrowed_books = []
 
     def display_info(self):
-        print(f"Member_ID = {self.member_id}")
-        print(f"Name = {self.name}")
-        print(f"Borrowed books = {self.borrowed_books}")
-
+        book_titles = [book.title for book in self.borrowed_books]
+        print(f"ID: {self.member_id} | Name: {self.name} | Borrowed Books: {book_titles}")

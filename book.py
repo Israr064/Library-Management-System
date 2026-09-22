@@ -11,9 +11,11 @@ class Book:
         self.is_issued = False
 
     def display_info(self):
-        print(f"Title = {self.title}")
-        print(f"Author = {self.author}")
-        print(f"Isbn = {self.isbn}")
+        status = "Issued" if self.is_issued else "Avaliable"
+        print(f"Title: {self.title} | Author: {self.author} | Isbn: {self.isbn} | Status: {status}")
+
+
+
         
 
 
