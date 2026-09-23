@@ -14,7 +14,8 @@ class Book:
         status = "Issued" if self.is_issued else "Avaliable"
         print(f"Title: {self.title} | Author: {self.author} | Isbn: {self.isbn} | Status: {status}")
 
-
+    def to_dict(self):
+        return {"title": self.title, "author": self.author, "isbn": self.isbn, "is_issued": self.is_issued}
 
         
 
