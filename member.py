@@ -14,4 +14,5 @@ class Member:
         print(f"ID: {self.member_id} | Name: {self.name} | Borrowed Books: {book_titles}")
 
     def to_dict(self):
-        return {"member_id": self.member_id, "name": self.name, "borrowed_books": self.borrowed_books}
+        return {"member_id": self.member_id, "name": self.name, "borrowed_books": [book.isbn for book in self.borrowed_books]}
+
