@@ -45,15 +45,31 @@ class Library:
     def issue_book(self,isbn,member_id):
         for book in self.books:
             if book.isbn == isbn:
-                if book.is_issued:
-                    raise Exception("Book already issued")
-                else: 
-                    book.is_issued = True
-                    for m in self.members:
-                        if m.member_id == member_id:
-                            m.borrowed_books.append(book)
-                            print(f"Book {book.title} is issued to {m.name}.")
-                            return
-                    raise Exception("Member not found")
-        raise Exception("Book not found.")
+                if book.is_issued == True:
+                    raise Exception("The book is issued")
 
+                for m in self.members:
+                    if m.member_id == member_id:
+                        book.is_issued = True
+                        m.borrowed_books.append(book)
+                        print(f"Book: '{book.title}' is issued to '{m.name}'")
+                        return
+                raise Exception("The member is not found.")
+        raise Exception("The book is not found.")
+
+    # Returing book methods
+    def return_book(self,isbn,member_id):
+        for book in self.books:
+            if book.isbn == isbn:
+                if book.is_issued == False:
+                    raise Exception("The book was not issued.")
+
+                for m in self.members:
+                    if m.member_id == member_id:
+                        m.borrowed_books.remove(book)
+                        book.is_issued = False
+                        print(f"Book: '{book.title}' is returned by '{m.name}'")
+                        return
+                raise Exception("The member is not found.")
+        raise Exception("The book is not found.")
+        

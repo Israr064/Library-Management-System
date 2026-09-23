@@ -24,13 +24,20 @@ members = [M1,M2]
 for member in members:
     Lib.add_member(member)
 
-
-try:
-    print("\nBooks to be issued:")
-    Lib.issue_book(102, 1)
-    Lib.issue_book(101, 10)
-except Exception as e: 
-    print("Error:",e)
-
+print(" ")
+print(" ")
+print(" ")
 # Lib.display_all_books()
 # Lib.display_all_members()
+
+try:
+    Lib.issue_book(101,1)
+except Exception as e:
+    print("Error:",e)
+
+
+try: 
+    Lib.return_book(101,1)
+    Lib.return_book(103,1)
+except Exception as e: 
+    print("Error",e)
